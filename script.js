@@ -1,12 +1,7 @@
-
-
-const image = document.getElementsByClassName('image');
-const text = document.getElementsByClassName('text')
-const imgArray = [];
-const textArray = [];
+const container = document.getElementById('container');
 const imgNum = 6;
 
-console.log(text);
+
 
 axios.get(`https://jsonplaceholder.typicode.com/photos`, {
     params: {
@@ -14,17 +9,20 @@ axios.get(`https://jsonplaceholder.typicode.com/photos`, {
     }
 }).then(result => {
     result.data.forEach(element => {
-        imgArray.push(element.url);
-        textArray.push(element.title);
+        createCard(element);
     });
-    updateCard();
 })
 
-function updateCard() {
-    console.log(imgArray)
-    for (let i = 0; i < imgNum; i++) {
-        image[i].src = imgArray[i];
-        text[i].innerText = textArray[i];
-    }
-}
 
+function createCard(element) {
+    const cardTemplate = `
+    <div class="card bg-white padding-20 debug">
+                <img class="image" src="${element.url}" alt="try1">
+                <p class="ptop-10 text">${element.title}</p>
+                <div class="img-pin">
+                    <img src="img/pin.svg" alt="pin">
+                </div>
+            </div>
+    `
+    container.innerHTML += cardTemplate;
+}
