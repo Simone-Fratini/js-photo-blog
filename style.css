@@ -61,6 +61,11 @@ debug {
 .image {
     width: 100%;
     height: auto;
+
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 /************************************************/
@@ -84,6 +89,19 @@ debug {
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.788);
     position: relative;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: rotate(-20deg) scale(1.1);
+    /* Rotate left and zoom */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
+    /* Increase shadow */
+}
+
+.card:hover .img-pin {
+    opacity: 0;
+
 }
 
 .img-container {
@@ -96,10 +114,10 @@ debug {
     top: 0px;
     left: 50%;
     transform: translate(-50%, -30%);
-
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Media Query for Tablets (e.g., max-width: 768px) */
+/* Media Query for Tablets*/
 @media (max-width: 790px) {
     .card {
         width: calc((100% - 40px) / 2);
@@ -110,7 +128,7 @@ debug {
     }
 }
 
-/* Media Query for Mobile Phones (e.g., max-width: 480px) */
+/* Media Query for Mobile*/
 @media (max-width: 480px) {
     .card {
         width: 100%;
