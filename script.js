@@ -1,22 +1,26 @@
 
 
 const image = document.getElementsByClassName('image');
+const text = document.getElementsByClassName('text')
 const imgArray = [];
+const textArray = [];
 const imgNum = 6;
 
-console.log(image[0].src);
+console.log(text);
 
 axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=6`).then(result => {
     result.data.forEach(element => {
         imgArray.push(element.url);
+        textArray.push(element.title);
     });
-}).finally(changeImg);
+    updateCard();
+})
 
-function changeImg() {
-
-    for (let i = 0; i <= imgArray.length; i++) {
-
+function updateCard() {
+    console.log(imgArray)
+    for (let i = 0; i < imgNum; i++) {
         image[i].src = imgArray[i];
+        text[i].innerText = textArray[i];
     }
 }
 
