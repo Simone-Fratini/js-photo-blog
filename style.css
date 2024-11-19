@@ -94,9 +94,8 @@ debug {
 
 .card:hover {
     transform: rotate(-20deg) scale(1.1);
-    /* Rotate left and zoom */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
-    /* Increase shadow */
+
 }
 
 .card:hover .img-pin {
