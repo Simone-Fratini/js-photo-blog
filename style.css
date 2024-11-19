@@ -18,6 +18,27 @@ header {
 
 /*UILITY*/
 
+.d-none {
+    display: none;
+}
+
+
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+    z-index: 9999;
+    display: flex;
+    /* Per centrare contenuti all'interno, opzionale */
+    justify-content: center;
+    /* Centra orizzontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+}
+
 debug {
     border: 1px solid red;
 }
@@ -89,12 +110,20 @@ debug {
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.788);
     position: relative;
-    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-overlay {
+    border-radius: 5px;
+    position: relative;
+    width: 600px;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: rotate(-20deg) scale(1.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
+    transform: rotate(-10deg) scale(1.1);
+    box-shadow: 8px 8px 25px 5px rgba(0, 0, 0, 0.938);
+    z-index: 999;
 
 }
 
