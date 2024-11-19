@@ -8,7 +8,11 @@ const imgNum = 6;
 
 console.log(text);
 
-axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=6`).then(result => {
+axios.get(`https://jsonplaceholder.typicode.com/photos`, {
+    params: {
+        _limit: imgNum
+    }
+}).then(result => {
     result.data.forEach(element => {
         imgArray.push(element.url);
         textArray.push(element.title);
