@@ -30,13 +30,10 @@ header {
     position: fixed;
     top: 0;
     background-color: rgba(0, 0, 0, 0.507);
-    z-index: 9999;
+    z-index: 99999;
     display: flex;
-    /* Per centrare contenuti all'interno, opzionale */
     justify-content: center;
-    /* Centra orizzontalmente */
     align-items: center;
-    /* Centra verticalmente */
 }
 
 debug {

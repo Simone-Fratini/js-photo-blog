@@ -1,5 +1,6 @@
 const container = document.getElementById('container');
 const imgNum = 6;
+const overlay = document.getElementById('overlay');
 
 
 
@@ -27,19 +28,32 @@ function createCard(element) {
     container.innerHTML += cardTemplate;
 }
 
-document.addEventListener('click', (e) => {
-    let cardClick = e.target.closest('.card');
-    cardClick.classList.add("d-none");
-    const overlayTemplate = `
-    <div class="card-overlay bg-white debug padding-20">
-            <img class="image" src="https://picsum.photos/300/300" alt="try1">
-            <p class="ptop-10 text">${element.title}</p>
-            <div class="img-pin">
-                <img src="img/pin.svg" alt="pin">
-            </div>
-        </div>
-    `
+document.addEventListener("click", (e) => {
+    let cardClick = e.target.closest(".card");
+
+
+    const parent = cardClick.parentElement;
+    const sibling = cardClick.nextElementSibling;
+
+    // Sposta la carta nell'overlay
+    overlay.appendChild(cardClick);
+    overlay.classList.add("overlay");
+    overlay.classList.remove("d-none");
+
+    //chiusura sull'overlay
+    overlay.addEventListener("click", () => {
+        overlay.classList.add("d-none");
+        overlay.classList.remove("overlay");
+
+
+        // Ripristina la carta nel suo contenitore originale  ma da errore!!!
+
+        parent.insertBefore(cardClick, sibling);
+
+    },
+    );
+
+});
 
 
 
-})
