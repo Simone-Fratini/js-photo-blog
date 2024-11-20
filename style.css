@@ -140,7 +140,9 @@ header {
     transition: opacity 0.1s ease-in-out;
 }
 
-
+canvas {
+    display: block;
+}
 
 /*Media Query for Tablets*/
 @media screen and (max-width: 790px) {
