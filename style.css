@@ -22,8 +22,6 @@ header {
     display: none;
 }
 
-
-
 .overlay {
     width: 100vw;
     height: 100vh;
@@ -36,9 +34,9 @@ header {
     align-items: center;
 }
 
-debug {
+/*.debug {
     border: 1px solid red;
-}
+}*/
 
 .text-center {
     text-align: center;
@@ -142,7 +140,9 @@ debug {
     transition: opacity 0.1s ease-in-out;
 }
 
-/* Media Query for Tablets*/
+
+
+/*Media Query for Tablets*/
 @media screen and (max-width: 790px) {
     .card {
         width: calc((100% - 40px) / 2);
@@ -153,7 +153,7 @@ debug {
     }
 }
 
-/* Media Query for Mobile*/
+/*Media Query for Mobile*/
 @media screen and (max-width: 480px) {
     .card {
         width: 100%;

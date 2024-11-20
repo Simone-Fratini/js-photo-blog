@@ -35,13 +35,15 @@ document.addEventListener("click", (e) => {
     const parent = cardClick.parentElement;
     const sibling = cardClick.nextElementSibling;
 
+    console.log(parent);
     // Sposta la carta nell'overlay
     overlay.appendChild(cardClick);
     overlay.classList.add("overlay");
     overlay.classList.remove("d-none");
 
     //chiusura sull'overlay
-    overlay.addEventListener("click", () => {
+    overlay.addEventListener("click", (e) => {
+        e.stopPropagation();
         overlay.classList.add("d-none");
         overlay.classList.remove("overlay");
 
@@ -54,6 +56,8 @@ document.addEventListener("click", (e) => {
     );
 
 });
+
+
 
 
 
